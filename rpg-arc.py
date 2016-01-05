@@ -1,7 +1,7 @@
 import json
 from pprint import pprint as pp
 
-from flask import Flask, request, abort, redirect, make_response, jsonify
+from flask import Flask, request, abort, redirect, make_response, jsonify, render_template
 import flask.ext.login as flask_login
 import boto3
 import decimal
@@ -28,6 +28,10 @@ class DecimalEncoder(json.JSONEncoder):
                 return int(o)
         return super(DecimalEncoder, self).default(o)
 
+
+@app.route("/")
+def index():
+    return render_template("index.html")
 
 @app.route('/campaign', methods=['POST'])
 def campaign():

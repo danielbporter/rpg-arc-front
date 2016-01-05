@@ -4,27 +4,12 @@
   "players":[
     "Peter","Daniel"
   ],
-  "active-player-characters":[
-    "Peter's Character", "Daniel's Character"
-  ],
+  "party":"Link to party object",
   "tagline": "A short description",
   "system": "System Reference",
   "maps": true,
   “pages”:[“link to first page”, “link to second page”],
   "color scheme":[],
   "history/setting": "Link to history",
-  "widget-data":
-  {
-    "POIs": [],
-    "LOIs": [],
-    "EOIs": [],
-    "Vehicals":[],
-    "Ship": [],
-    "Space-Ship": [],
-    "notes":[],
-    "plots":[],
-    "sessions":[],
-    "other widgets": ["other data"]
-  }
 
 }
