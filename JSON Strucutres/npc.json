@@ -1,0 +1,17 @@
+{
+  "npcid": 1,
+  "onwer": "onwer reference",
+  "system": "star wars ffg",
+  "META":{
+
+  },
+  "Skills":[
+    {"name":"Melee", "value":2},
+    {"name":"Cool", "value":2}
+  ],
+  "Characteristics":[
+    {"name":"Agility", "value":5},
+    {"name":"Brawn", "value":5}
+
+  ]
+}
