@@ -12,6 +12,9 @@ module.exports = {
       { test: /\.json/, loader: 'json-loader' },
     ],
   },
+
+  devtool: '#inline-source-map',
+
   resolve: {
     extensions: ['', '.js', '.jsx'],
   },

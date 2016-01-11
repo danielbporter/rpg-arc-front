@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint src",
     "build": "webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --inline --content-base build/"
   },
   "author": "Daniel Porter, Jensen Dempsey, Peter Herlin",
   "license": "UNLICENSED",
@@ -20,7 +21,8 @@
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^3.0.2",
     "eslint-plugin-react": "^3.14.0",
-    "webpack": "^1.12.10"
+    "webpack": "^1.12.10",
+    "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
     "immutable": "^3.7.6",
