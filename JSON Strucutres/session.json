@@ -1,0 +1,22 @@
+{
+  "sessionid": 1,
+  "name": "Session name",
+  "campaignid":1,
+  "start-time": "start time",
+  "end-time": "end time",
+  "players-present": [],
+  "session-number": 0,
+  "planning-notes": ["reference to notes for session, limit one for free"],
+  "session-notes": ["reference to notes for session, limit one for free"],
+  "related-objects":{
+    "npcs": [],
+    "items": [],
+    "places": [],
+  }
+}
+
+Allow longer session notes to be stored as one or more session notes, using multiple
+session objects
+
+planning-notes would be dm only, session notes would be open to everyone, and anyone can edit them
+would store in some type of, the permissions of the note would be set automatically
