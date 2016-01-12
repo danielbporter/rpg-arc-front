@@ -45,9 +45,8 @@ class Sidebar extends React.Component {
   // }
 
   render() {
-    const style = {
-      height
-    };
+    const style = {}
+    ;
 
     return (
       <Paper />
