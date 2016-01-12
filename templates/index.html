@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Hello React!</title>
-    <script src="{{ url_for('static', filename='bower_components/react/react.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='bower_components/react/react-dom.min.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <meta charset="utf-8" />
+    <title>RPG-Architect</title>
+    <link rel="stylesheet" href="{{  url_for('static', filename='css/normalize.css')}}" />
   </head>
   <body>
-    <div id="main"></div>
-    <script type="text/babel" src="{{  url_for('static', filename='scripts/main.js')}}"></script>
+    <div id='app'></div>
+    <script type="text/javascript" src="{{  url_for('static', filename='web-app/build/bundle.js')}}"></script>
   </body>
 </html>

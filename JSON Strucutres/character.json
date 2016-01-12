@@ -13,7 +13,7 @@
     {"name": "Force", "current":3, "max":3, "min":0}
   ],
   "money":[{"name":"Credits", "current":1000}],
-  "notes":["note for character, like backstory, limit 5 for free"]
+  "notes":["note for character, like backstory, limit 1 for free"]
 }
 
 

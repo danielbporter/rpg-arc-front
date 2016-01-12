@@ -31,7 +31,7 @@ class DecimalEncoder(json.JSONEncoder):
 
 @app.route("/")
 def index():
-    return render_template("test.html")
+    return render_template("index.html")
 
 @app.route('/campaign', methods=['POST'])
 def campaign():

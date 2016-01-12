@@ -15,7 +15,8 @@
     "notes":[],
     "sessions":[],
     "places": [],
-  }
+  },
+  "super-widgets":["list of super widgets"]
 }
 
 this is data that everyone would have access to, a few permissions withstanding
