@@ -1,0 +1,23 @@
+{
+  "noteid": 1,
+  "note-title": "My Note, if continuation followed by note id, then it will be different",
+  "onwer": "owner id",
+  "campaignid": "campaignid",
+  "notes": "the notes in an html style",
+  "note-continuation":"refeence to continuation note, paid users only",
+  "related-objects":{
+    "npcs": [],
+    "items": [],
+    "places": [],
+  },
+  "permissions":{
+    "Public": "is the note public for everone in campaign, if true everyone sees it",
+    "dm": "dm can see, otherwise not, only for players",
+    "players": ["which players can see it", "if blank no other players can see it"],
+  }
+}
+
+sort by campaignid,
+maybe a second index on a campaign-note-id or something like this
+
+continuation notes would not have permissions or related-objects, instead they would inhereit them from the original note

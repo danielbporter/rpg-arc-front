@@ -1,0 +1,23 @@
+{
+  "name": "rpg-arc",
+  "homepage": "https://github.com/jdemp/rpg-arc",
+  "authors": [
+    "Jensen Dempsey <jdemp@jensendempsey.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.14.6",
+    "material-ui": "~0.14.2"
+  }
+}

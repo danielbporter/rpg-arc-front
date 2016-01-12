@@ -1,0 +1,20 @@
+{
+  "id":0,
+  "player":"userid",
+  "dm":"userid",
+  "Total-XP":100,
+  "Current-XP":0,
+  "Campaign":1,
+  "System": "Star wars",
+  "alive":true,
+  "Pools":[
+    {"name": "Wounds", "current": 20, "max":20, "min":0},
+    {"name": "Strain", "current": 10, "max":12, "min":0},
+    {"name": "Force", "current":3, "max":3, "min":0}
+  ],
+  "money":[{"name":"Credits", "current":1000}],
+  "notes":["note for character, like backstory, limit 5 for free"]
+}
+
+
+character notes permissions are always dm viewable, but can be limited for other players

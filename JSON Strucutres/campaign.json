@@ -4,12 +4,18 @@
   "players":[
     "Peter","Daniel"
   ],
+  "characters":[],
   "party":"Link to party object",
   "tagline": "A short description",
   "system": "System Reference",
   "maps": true,
-  “pages”:[“link to first page”, “link to second page”],
-  "color scheme":[],
   "history/setting": "Link to history",
-
+  "current-session": "reference to current session",
+  "campaign-table-of-contents":{
+    "notes":[],
+    "sessions":[],
+    "places": [],
+  }
 }
+
+this is data that everyone would have access to, a few permissions withstanding
