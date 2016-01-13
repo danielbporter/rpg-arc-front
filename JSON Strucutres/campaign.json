@@ -9,6 +9,12 @@
   "tagline": "A short description",
   "system": "System Reference",
   "maps": true,
+  "calendar":true,
+  "calendar-details":{
+    "calendar-template":"reference to calendar template, int",
+    "campaign-start-date":"datetime in calendar",
+    "campaign-current-date":"current date for players"
+  },
   "history/setting": "Link to history",
   "current-session": "reference to current session",
   "campaign-table-of-contents":{
