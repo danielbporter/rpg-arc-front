@@ -9,11 +9,6 @@
   "session-number": 0,
   "planning-notes": ["reference to notes for session, limit one for free"],
   "session-notes": ["reference to notes for session, limit one for free"],
-  "calendar-detail":{
-    "events":["links to events in session"],
-    "start-date":"start date for session in game",
-    "end-date":"end date in game for session"
-  }
 }
 
 Allow longer session notes to be stored as one or more session notes, using multiple
