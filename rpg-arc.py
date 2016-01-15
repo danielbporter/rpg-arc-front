@@ -2,21 +2,14 @@ import json
 from pprint import pprint as pp
 
 from flask import Flask, request, abort, redirect, make_response, jsonify, render_template
-import flask.ext.login as flask_login
 import boto3
 import decimal
+import bcrypt
 
 
 app = Flask(__name__)
 app.secret_key = "this is my awesome key"
 db = boto3.resource('dynamodb')
-
-login_manager = flask_login.LoginManager()
-login_manager.init_app(app)
-
-
-class User(flask_login.UserMixin):
-    pass
 
 
 class DecimalEncoder(json.JSONEncoder):
@@ -33,9 +26,29 @@ class DecimalEncoder(json.JSONEncoder):
 def index():
     return render_template("index.html")
 
-@app.route("/login")
+@app.route("/api/login")
 def login():
     return render_template("login.html")
+
+
+@app.route('/api/register', methods=['POST'])
+def register():
+    json_data = request.json
+
+    user = {
+        "UserID": json_data['email'],
+        "email": json_data['email'],
+        "password": bcrypt.hashpw(json_data['password'], bcrypt.gensalt()),
+        "first_name": json_data['first_name'],
+        "last_name": json_data['last_name']
+    }
+    try:
+        table= db.Table('User').put_item(Item=json.dumps(user))
+        status = 'success'
+    except:
+        status = 'this user is already registered'
+    return jsonify({'result': status})
+
 
 @app.route('/campaign', methods=['POST'])
 def campaign():
@@ -51,7 +64,7 @@ def campaign():
         )
 
 
-@app.route('/campaign/<int:campaign_id>', methods=['GET', 'POST', 'PUT'])
+@app.route('/api/campaign/<int:campaign_id>', methods=['GET', 'POST', 'PUT'])
 def campaign_detail(campaign_id):
     table=db.Table('Campaign')
     if request.method == 'GET':
@@ -66,7 +79,7 @@ def campaign_detail(campaign_id):
     except KeyError:
         return "Campaign not found"
 
-@app.route('/user', methods=['POST'])
+@app.route('/api/user', methods=['POST'])
 def user():
     table = db.Table('User')
     if request.method == 'POST':
@@ -75,7 +88,7 @@ def user():
         pass
 
 
-@app.route('/user/<string:user_id>', methods=['GET', 'POST', 'PUT'])
+@app.route('/api/user/<string:user_id>', methods=['GET', 'POST', 'PUT'])
 def user_detail(user_id):
     table=db.Table('User')
     if request.method == 'GET':

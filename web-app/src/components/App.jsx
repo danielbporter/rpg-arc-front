@@ -24,11 +24,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
+          <div className="sidebar">
+          <Sidebar />
+        </div>
         <div className="navbar">
           <Navbar />
-        </div>
-        <div className="sidebar">
-          <Sidebar />
         </div>
         <div className="mainPanel">
           <Dashboard />

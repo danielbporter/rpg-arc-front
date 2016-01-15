@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import LeftNav from 'material-ui/lib/left-nav';
 import Paper from 'material-ui/lib/paper';
-import SideBarHiddenLeftNav from './SideBarHiddenLeftNav';
 
 function mapStateToProps(state) {
   return {
@@ -23,26 +22,27 @@ class Sidebar extends React.Component {
       zIndex: 0,
       backgroundColor: 'grey',
       display: 'block',
-      width: this.props.width
+      width: this.props.width,
+      height: this.props.height
     };
   }
 
-  // render() {
-  //   return (
-  //     <div>
-  //       <LeftNav
-  //         className="sidebar"
-  //         zDepth={0}
-  //         docked
-  //         position="fixed"
-  //         // width={this.props.width}
-  //         style={this.getStyles()}
-  //       >
-  //         <SideBarHiddenLeftNav />
-  //       </LeftNav>
-  //     </div>
-  //   );
-  // }
+   render() {
+     return (
+       <div>
+         <LeftNav
+           className="sidebar"
+           zDepth={0}
+           docked
+           position="fixed"
+           // width={this.props.width}
+           style={this.getStyles()}
+         >
+           <SideBarHiddenLeftNav />
+         </LeftNav>
+       </div>
+     );
+   }
 
   render() {
     const style = {}
@@ -59,7 +59,7 @@ Sidebar.propTypes = {
   width: React.PropTypes.number
 };
 
-// Sidebar.defaultProps = {
+//Sidebar.defaultProps = {
 //   width: 200,
 // };
 
