@@ -28,7 +28,18 @@ def index():
 
 @app.route("/api/login")
 def login():
-    return render_template("login.html")
+    json_data = request.json
+    table=db.Table('User')
+    data = table.get_item(
+                Key={
+                    'UserID': json_data['userid']
+                }
+        )
+    if user and bcrypt.hashpw(json_data['password'],data['Item']['password'] == data['Item']['password']):
+        status = True
+    else:
+        status = False
+    return jsonify({'result': status})
 
 
 @app.route('/api/register', methods=['POST'])

@@ -1,37 +1,17 @@
 import React from 'react';
+import {Link} from 'react-router'
 
-
-export default class Login extends React.Component {
-
-  constructor() {
-    this.state = {
-      user: '',
-      password: ''
-    };
-  }
-
-  // This will be called when the user clicks on the login button
-  login(e) {
-    e.preventDefault();
-    // Here, we call an external AuthService. We’ll create it in the next step
-    Auth.login(this.state.user, this.state.password)
-      .catch(function(err) {
-        console.log("Error logging in", err);
-      });
-  }
+class Login extends React.Component {
 
   render() {
     return (
-        <form role="form">
-        <div className='form-group'>
-          <input type='text' valueLink={this.linkState('user')}placeholder='Username' />
-          <input type='password' valueLink={this.linkState('password')} placeholder='Password' />
+      <div>
+          <h1>this is the login page</h1>
+          <Link to="/">Main App</Link>
         </div>
-        <button type='submit' onClick={this.login.bind(this)}>Submit</button>
-      </form>
     );
   }
 }
 
-// We’re using the mixin `LinkStateMixin` to have two-way databinding between our component and the HTML.
-reactMixin(Login.prototype, React.addons.LinkedStateMixin);
+
+export default Login;
