@@ -44,20 +44,20 @@ def login():
 
 @app.route('/api/register', methods=['POST'])
 def register():
-    json_data = request.json
-
+    json_data = request.get_json()
+    print(json_data)
+    hash_password = bcrypt.hashpw(json_data['password'].encode('utf-8'), bcrypt.gensalt())
     user = {
         "UserID": json_data['email'],
         "email": json_data['email'],
-        "password": bcrypt.hashpw(json_data['password'], bcrypt.gensalt()),
+        "password": hash_password.decode('utf-8'),
         "first_name": json_data['first_name'],
         "last_name": json_data['last_name']
     }
-    try:
-        table= db.Table('User').put_item(Item=json.dumps(user))
-        status = 'success'
-    except:
-        status = 'this user is already registered'
+    print(user)
+    table = db.Table('User')
+    table.put_item(Item=user)
+    status = 'success'
     return jsonify({'result': status})
 
 

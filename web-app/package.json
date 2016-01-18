@@ -25,8 +25,10 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "ajax": "0.0.4",
     "history": "^1.17.0",
     "immutable": "^3.7.6",
+    "jquery": "^2.2.0",
     "material-ui": "^0.14.1",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
