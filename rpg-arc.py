@@ -26,20 +26,27 @@ class DecimalEncoder(json.JSONEncoder):
 def index():
     return render_template("index.html")
 
-@app.route("/api/login")
+
+@app.route("/api/login", methods=['POST'])
 def login():
-    json_data = request.json
-    table=db.Table('User')
-    data = table.get_item(
+    json_data = request.get_json()
+    password = json_data['password'].encode('utf-8')
+    table = db.Table('User')
+    db_data = table.get_item(
                 Key={
                     'UserID': json_data['userid']
-                }
-        )
-    if user and bcrypt.hashpw(json_data['password'],data['Item']['password'] == data['Item']['password']):
-        status = True
-    else:
-        status = False
-    return jsonify({'result': status})
+                },
+                ProjectionExpression='UserID, password'
+            )
+    try:
+        userid = db_data['Item']['UserID']
+        encoded_hash = db_data['Item']['password'].encode('utf-8')
+        if user and bcrypt.hashpw(password, encoded_hash) == encoded_hash:
+            return jsonify({'result': True, 'token': 'a token', 'user': userid})
+        else:
+            return jsonify({'result': False, 'error': 'Invalid Password'})
+    except KeyError:
+        return jsonify({'result': False, 'error':'Invalid User'})
 
 
 @app.route('/api/register', methods=['POST'])

@@ -38,7 +38,8 @@ class Registration extends React.Component {
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(data),
             success: function(){
-                console.log("success")
+                console.log("success");
+                location.href ='/#/login';
             },
             error: function(){
                 console.log("Failed to register")
@@ -61,26 +62,30 @@ class Registration extends React.Component {
                 placeholder="Your first name"
                 value={this.state.first_name}
                 onChange={this.handleFirstNameChange.bind(this)}
+                required
             />
             <input
                 type="text"
                 placeholder="Your Last Name"
                 value={this.state.last_name}
                 onChange={this.handleLastNameChange.bind(this)}
+                required
             />
               <input
                 type="email"
                 placeholder="Your Email"
                 value={this.state.email}
                 onChange={this.handleEmailChange.bind(this)}
+                required
             />
               <input
-                type="text"
+                type="password"
                 placeholder="Your password"
                 value={this.state.password}
                 onChange={this.handlePasswordChange.bind(this)}
+                required
             />
-            <input type="submit" value="Post" />
+            <input type="submit" value="Register" />
       </form>
         </div>
       </div>
