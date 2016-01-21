@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Widget from './widget-core/Widget';
 import RaisedButton from 'material-ui/lib/raised-button';
 import Divider from 'material-ui/lib/divider';
 import DiceButton from './DiceButton';
@@ -22,14 +21,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 class DiceWidget extends React.Component {
-  getStyle() {
-    return {
-      height: 200,
-      width: 465,
-      backgroundColor: '#DDDDDD',
-    };
-  }
-
   rollHistory() {
     if (this.props.history.size === 0) {
       return '...';
@@ -56,7 +47,7 @@ class DiceWidget extends React.Component {
     const history = this.rollHistory();
 
     return (
-      <Widget style={this.getStyle()}>
+      <div className="dice-widget">
         <DiceButton value={4} roll={this.props.addRoll} />
         <DiceButton value={6} roll={this.props.addRoll} />
         <DiceButton value={8} roll={this.props.addRoll} />
@@ -71,7 +62,7 @@ class DiceWidget extends React.Component {
         <p>{this.props.total}</p>
         <Divider />
         <RaisedButton label="Reset" onTouchTap={this.props.resetRoll} />
-      </Widget>
+      </div>
     );
   }
 }

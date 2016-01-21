@@ -3,10 +3,25 @@
     padding: 10px;
 }
 
+.dashboard {
+	position: absolute;
+}
+
 .widget {
 	min-width: 70px;
 	min-height: 50px;
 	margin: 10px;
 	padding: 10px;
-	float: left;
+	/* float: left; */
+	border: 1px black solid;
+}
+
+.widget-bar {
+	margin-bottom: 2px;
+	border: 1px black solid;
+	text-align: center;
+}
+
+.dice-widget {
+	background-color: #DDDDDD;
 }
