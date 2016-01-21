@@ -2,3 +2,11 @@
     margin: auto;
     padding: 10px;
 }
+
+.widget {
+	min-width: 70px;
+	min-height: 50px;
+	margin: 10px;
+	padding: 10px;
+	float: left;
+}

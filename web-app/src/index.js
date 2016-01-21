@@ -1,15 +1,15 @@
 import React from 'react';
-import  ReactDOM  from 'react-dom';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import createStore from './store';
-import {Router, Route, Link} from 'react-router'
+import { Router, Route } from 'react-router';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 import App from './components/App';
-import Login from './components/auth/Login'
-import Registration from './components/auth/Registration'
+import Login from './components/auth/Login';
+import Registration from './components/auth/Registration';
 
 const store = createStore();
 
