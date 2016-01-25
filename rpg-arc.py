@@ -44,9 +44,9 @@ def login():
         if user and bcrypt.hashpw(password, encoded_hash) == encoded_hash:
             return jsonify({'result': True, 'token': 'a token', 'user': userid})
         else:
-            return jsonify({'result': False, 'error': 'Invalid Password'})
+            return jsonify({'result': False, 'error': 'Invalid Username/Password'})
     except KeyError:
-        return jsonify({'result': False, 'error':'Invalid User'})
+        return jsonify({'result': False, 'error':'Invalid Username/Password'})
 
 
 @app.route('/api/register', methods=['POST'])
