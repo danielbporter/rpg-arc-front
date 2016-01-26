@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import Dashboard from './Dashboard';
+//import Home from './Home'
 
 // import {
 //   // lightRawTheme,
@@ -10,20 +11,38 @@ import Dashboard from './Dashboard';
 // } from 'material-ui/lib/styles';
 
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-    // this.state = { muiTheme: getMuiTheme() };
-  // }
+   constructor(props) {
+     super(props);
+     this.state = {lock:props.lock, idToken:props.idToken};
+   }
 
-  // getChildContext() {
-  //   return {
-  //     muiTheme: this.state.muiTheme,
-  //   };
-  // }
+    componentWillMount() {
+        this.setState({idToken: this.getIdToken()})
+    }
+    showLock(){
+        this.props.lock.show();
+    }
 
-  render() {
-    return (
-      <div>
+    getIdToken() {
+        var idToken = localStorage.getItem('userToken');
+        var authHash = this.lock.parseHash(window.location.hash);
+        if (!idToken && authHash) {
+        if (authHash.id_token) {
+            idToken = authHash.id_token;
+            localStorage.setItem('userToken', authHash.id_token);
+            }
+        if (authHash.error) {
+            console.log("Error signing in", authHash);
+            return null;
+            }
+        }
+        return idToken;
+  }
+
+    render() {
+    if (this.state.idToken) {
+      return (
+        <div>
         <div className="navbar">
           <Navbar />
         </div>
@@ -31,12 +50,20 @@ class App extends React.Component {
           <Dashboard />
         </div>
       </div>
-    );
+
+      );
+    } else {
+      return (
+          <div className="login-box">
+             <a onClick={this.showLock.bind(this)}>Sign In</a>
+          </div>
+      );
+    }
   }
 }
 
-// App.childContextTypes = {
-//   muiTheme: React.PropTypes.object,
-// };
+App.propTypes = {lock:React.PropTypes.object, idToken:React.PropTypes.string};
+App.defaultProps = {lock:new Auth0Lock('ICf6JzrB6yHqkaSWFzJN1sAWwUINpbvJ', 'cyve.auth0.com'),
+                    idToken:localStorage.getItem('userToken')};
 
 export default App;

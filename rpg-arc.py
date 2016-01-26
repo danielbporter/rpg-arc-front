@@ -42,11 +42,11 @@ def login():
         userid = db_data['Item']['UserID']
         encoded_hash = db_data['Item']['password'].encode('utf-8')
         if user and bcrypt.hashpw(password, encoded_hash) == encoded_hash:
-            return jsonify({'result': True, 'token': 'a token', 'user': userid})
+            return jsonify({"status": "logged in"})
         else:
-            return jsonify({'result': False, 'error': 'Invalid Username/Password'})
+            abort(401)
     except KeyError:
-        return jsonify({'result': False, 'error':'Invalid Username/Password'})
+        abort(401)
 
 
 @app.route('/api/register', methods=['POST'])
@@ -70,7 +70,6 @@ def register():
 
 @app.route('/campaign', methods=['POST'])
 def campaign():
-
     table = db.Table('Campaign')
     if request.method == 'POST':
         table.put_item(
@@ -96,6 +95,7 @@ def campaign_detail(campaign_id):
         return json.dumps(data['Item'], cls=DecimalEncoder)
     except KeyError:
         return "Campaign not found"
+
 
 @app.route('/api/user', methods=['POST'])
 def user():
