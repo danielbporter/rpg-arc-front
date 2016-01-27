@@ -1,5 +1,6 @@
 import React from 'react';
 import DiceWidget from './DiceWidget';
+import CreateCampaign from './Widgets/CreateCampaign'
 
 class Dashboard extends React.Component {
   getStyles() {
@@ -12,7 +13,8 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div style={this.getStyles()}>
-        <DiceWidget />
+        <DiceWidget/>
+        <CreateCampaign/>
       </div>
     );
   }

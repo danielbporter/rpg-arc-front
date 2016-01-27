@@ -6,6 +6,7 @@ import Divider from 'material-ui/lib/divider';
 import DiceButton from './DiceButton';
 import { diceRoll, resetRoll } from '../actionCreators/Dice';
 import { List } from 'immutable';
+import Widget from './Widgets/Widget'
 
 function mapStateToProps(state) {
   return {
@@ -59,7 +60,7 @@ class DiceWidget extends React.Component {
     const history = this.rollHistory();
 
     return (
-      <Paper style={this.getStyle()}>
+      <Widget>
         <DiceButton value={4} roll={this.props.addRoll} />
         <DiceButton value={6} roll={this.props.addRoll} />
         <DiceButton value={8} roll={this.props.addRoll} />
@@ -74,7 +75,7 @@ class DiceWidget extends React.Component {
         <p>{this.props.total}</p>
         <Divider />
         <RaisedButton label="Reset" onTouchTap={this.props.resetRoll} />
-      </Paper>
+          </Widget>
     );
   }
 }
