@@ -61,6 +61,7 @@ class DiceWidget extends React.Component {
 
     return (
       <Widget>
+          <div>
         <DiceButton value={4} roll={this.props.addRoll} />
         <DiceButton value={6} roll={this.props.addRoll} />
         <DiceButton value={8} roll={this.props.addRoll} />
@@ -74,7 +75,7 @@ class DiceWidget extends React.Component {
         <Divider />
         <p>{this.props.total}</p>
         <Divider />
-        <RaisedButton label="Reset" onTouchTap={this.props.resetRoll} />
+        <RaisedButton label="Reset" onTouchTap={this.props.resetRoll} /></div>
           </Widget>
     );
   }

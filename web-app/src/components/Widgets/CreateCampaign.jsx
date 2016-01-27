@@ -1,5 +1,4 @@
 import React from 'react';
-import Paper from 'material-ui/lib/paper';
 import Widget from './Widget';
 
 class CreateCampaign extends React.Component {
