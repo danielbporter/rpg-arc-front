@@ -40,19 +40,16 @@ class App extends React.Component {
     render() {
     if (this.state.idToken) {
       return (
-        <div>
-        <div className="navbar">
+          <div>
           <Navbar />
-        </div>
-        <div className="mainPanel">
           <Dashboard />
-        </div>
-      </div>
+              </div>
 
       );
     } else {
       return (
           <div className="login-box">
+              <Navbar/>
              <a onClick={this.showLock.bind(this)}>Sign In</a>
           </div>
       );

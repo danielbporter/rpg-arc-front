@@ -9,13 +9,15 @@ module.exports = {
   module: {
     loaders: [
       { test: [/\.(js|jsx)$/], exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.json/, loader: 'json-loader' }
+      { test: /\.json/, loader: 'json-loader' },
+       { test: /\.css$/, loader: "style-loader!css-loader" },
+      {test: /\.scss$/, loaders: ["style", "css", "sass"]}
     ]
   },
 
   devtool: '#inline-source-map',
 
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.css']
   }
 };

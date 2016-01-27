@@ -88,17 +88,24 @@ def register():
     return jsonify({'result': status})
 
 
-@app.route('/campaign', methods=['POST'])
+@app.route('/api/campaign', methods=['POST'])
+@requires_auth
 def campaign():
+    token = request.headers.get('Authorization', None).split()[1]
+    decoded = jwt.decode(
+            token,
+            base64.b64decode('9_X_rJMcCBBgI8AcR-ouUvxlXLlbFqAJiDQtjycQhV6sO95sSNHPadw0Q7MTP_dg'.replace("_","/").replace("-","+")),
+            audience='ICf6JzrB6yHqkaSWFzJN1sAWwUINpbvJ'
+            )
+    userid = decoded['sub']
     table = db.Table('Campaign')
-    if request.method == 'POST':
-        table.put_item(
-            Item={
-                'CampaignID': 3,
-                'UserID': 'jdemp@cyve',
-                'Name': 'Again',
-            }
+    json_data = request.get_json()
+    json_data['userid'] = userid
+    print(json_data)
+    table.put_item(
+        Item=json_data
         )
+    return jsonify({'status': 'success'})
 
 
 @app.route('/api/campaign/<int:campaign_id>', methods=['GET', 'POST', 'PUT'])
