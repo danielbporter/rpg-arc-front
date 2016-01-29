@@ -1,5 +1,4 @@
 import json
-from pprint import pprint as pp
 from functools import wraps
 import jwt
 import base64
@@ -7,8 +6,6 @@ from flask import Flask, request, abort, redirect, make_response, jsonify, rende
 import boto3
 import decimal
 from werkzeug.local import LocalProxy
-import bcrypt
-
 
 app = Flask(__name__)
 current_user = LocalProxy(lambda: _request_ctx_stack.top.current_user)
@@ -68,6 +65,14 @@ def requires_auth(f):
     return decorated
 
 
+def get_userid(token):
+    return jwt.decode(
+            token,
+            base64.b64decode('9_X_rJMcCBBgI8AcR-ouUvxlXLlbFqAJiDQtjycQhV6sO95sSNHPadw0Q7MTP_dg'.replace("_","/").replace("-","+")),
+            audience='ICf6JzrB6yHqkaSWFzJN1sAWwUINpbvJ'
+            )
+
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -92,11 +97,7 @@ def register():
 @requires_auth
 def campaign():
     token = request.headers.get('Authorization', None).split()[1]
-    decoded = jwt.decode(
-            token,
-            base64.b64decode('9_X_rJMcCBBgI8AcR-ouUvxlXLlbFqAJiDQtjycQhV6sO95sSNHPadw0Q7MTP_dg'.replace("_","/").replace("-","+")),
-            audience='ICf6JzrB6yHqkaSWFzJN1sAWwUINpbvJ'
-            )
+    decoded = get_userid(token)
     userid = decoded['sub']
     table = db.Table('Campaign')
     json_data = request.get_json()

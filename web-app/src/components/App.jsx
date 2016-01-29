@@ -1,29 +1,23 @@
-import React from 'react';
-
+import React, {PropTypes} from 'react';
+//import { connect } from 'react-redux'
 import Navbar from './Navbar';
-import Sidebar from './Sidebar';
 import Dashboard from './Dashboard';
-//import Home from './Home'
-
-// import {
-//   // lightRawTheme,
-//   getMuiTheme,
-// } from 'material-ui/lib/styles';
+//import Login from './Login';
+import auth from './../auth'
 
 class App extends React.Component {
    constructor(props) {
      super(props);
-     this.state = {lock:props.lock, idToken:this.getIdToken()};
    }
-
+    /*
     showLock(){
         this.state.lock.show()
     }
-
     getIdToken() {
         var idToken = localStorage.getItem('userToken');
         var authHash = this.props.lock.parseHash(window.location.hash);
-        if (!idToken && authHash) {
+        if (!idToken && authHash)
+        {
         if (authHash.id_token) {
             idToken = authHash.id_token;
             localStorage.setItem('userToken', authHash.id_token);
@@ -35,29 +29,18 @@ class App extends React.Component {
         }
         window.location.href = '/#';
         return idToken;
-  }
+    }*/
 
     render() {
-    if (this.state.idToken) {
       return (
           <div>
           <Navbar />
           <Dashboard />
-              </div>
-
-      );
-    } else {
-      return (
-          <div className="login-box">
-              <Navbar/>
-             <a onClick={this.showLock.bind(this)}>Sign In</a>
           </div>
       );
+
     }
-  }
+
 }
 
-App.propTypes = {lock:React.PropTypes.object, idToken:React.PropTypes.string};
-App.defaultProps = {lock:new Auth0Lock('ICf6JzrB6yHqkaSWFzJN1sAWwUINpbvJ', 'cyve.auth0.com')};
-
-export default App;
+export default App

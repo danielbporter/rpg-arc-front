@@ -8,7 +8,11 @@ import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 import LeftNav from 'material-ui/lib/left-nav';
 
+
 import increment from '../actionCreators/increment';
+
+import auth from './../auth'
+import {Link} from 'react-router'
 
 function mapStateToProps(state) {
   // console.log(state.ui.toString());
@@ -48,10 +52,14 @@ class Navbar extends React.Component {
         this.setState({open: false})
     }
 
-  signOut(){
-    localStorage.removeItem('userToken');
-      window.location.href = '/';
+    handleSignOut(){
+        window.location.href = '/#/logout'
+    }
+
+    componentWillUnmount() {
+
   }
+
 
   render() {
     return (
@@ -76,7 +84,7 @@ class Navbar extends React.Component {
                 targetOrigin={{horizontal: 'right', vertical: 'top'}}
                 anchorOrigin={{horizontal: 'right', vertical: 'top'}}>
                     <MenuItem primaryText="Help" />
-                    <MenuItem primaryText="Sign out" onClick={this.signOut.bind(this)}/>
+                    <MenuItem primaryText="Sign Out" linkButton={true} href="/#/logout"/>
             </IconMenu>
 
     }/>
