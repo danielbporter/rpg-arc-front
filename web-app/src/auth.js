@@ -8,7 +8,8 @@ module.exports =
             localStorage.setItem('userToken', token);
             localStorage.setItem('userProfile', profile);
             console.log(profile);
-            window.location.href = '/#/app'
+            // add user to our user_table
+            window.location.href = '/#/dashboard'
         });
   },
 

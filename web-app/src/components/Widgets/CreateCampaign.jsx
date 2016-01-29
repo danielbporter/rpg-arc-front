@@ -43,7 +43,7 @@ class CreateCampaign extends React.Component {
         <Widget>
             <div>
                <h3>Create Campaign</h3>
-          <form className="registrationForm" onSubmit={this.submitCreateCampaign.bind(this)}>
+          <form className="createCampaign" onSubmit={this.submitCreateCampaign.bind(this)}>
             <input
                 type="text"
                 placeholder="A name for the Campaign"
@@ -58,7 +58,7 @@ class CreateCampaign extends React.Component {
                 onChange={this.handleSystemChange.bind(this)}
                 required
             />
-            <input type="submit" value="Register" />
+            <input type="submit" value="Create" />
       </form>
                 </div>
             </Widget>

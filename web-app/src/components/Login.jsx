@@ -1,10 +1,27 @@
 import React from 'react';
 import auth from './../auth';
+import Navbar from './Navbar';
 
 class Login extends React.Component {
 
-    componentDidMount(){
-        auth.login();
+    componentDidMount()
+    {
+        if(auth.loggedIn()==true)
+        {
+            window.location.href = '/#/dashboard';
+        }
+        else {
+            auth.login();
+        }
+    }
+
+    getStyle(){
+        return {
+            width: '200',
+            display: 'block',
+            marginLeft: 'auto',
+            marginRight: 'auto'
+        }
     }
 
   render(){
