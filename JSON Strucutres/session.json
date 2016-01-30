@@ -7,8 +7,9 @@
   "players-presetent":[],
   "characters-present": [],
   "session-number": 0,
-  "planning-notes": ["reference to notes for session, limit one for free"],
-  "session-notes": ["reference to notes for session, limit one for free"],
+  "planning-notes": "planning notes",
+  "session-notes": "session notes",
+  
 }
 
 Allow longer session notes to be stored as one or more session notes, using multiple

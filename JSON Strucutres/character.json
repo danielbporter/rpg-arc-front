@@ -1,19 +1,27 @@
 {
-  "id":0,
+  "Name/pk":"character name",
+  "Campaign/sort key": "campaign",
   "player":"userid",
   "dm":"userid",
+  "description": "basic description of character",
+  "spend-xp": true,
   "Total-XP":100,
-  "Current-XP":0,
-  "Campaign":1,
+  "Available-XP/if spend xp is true":0,
   "System": "Star wars",
   "alive":true,
-  "Pools":[
-    {"name": "Wounds", "current": 20, "max":20, "min":0},
-    {"name": "Strain", "current": 10, "max":12, "min":0},
-    {"name": "Force", "current":3, "max":3, "min":0}
-  ],
+  "race":"human",
+  "classes": ["Jedi"],
+  "subclasses":["Lightsaber","Pilot"],
   "money":[{"name":"Credits", "current":1000}],
-  "notes":["note for character, like backstory, limit 1 for free"]
+  "notes":["note for character, like backstory, limit 1 for free"],
+  "Sections":[
+    {"name":"Skills", "type":"list", "fields":["name", "rank", "career"], "list":[
+      {"name":"Stealth", "rank":2, "career":true},
+      {"name":"Melee", "rank":1, "career":false}
+      ]},
+    {"name":"Health", "type":"pool-list", "max":"threshold"}  
+
+  ]
 }
 
 
