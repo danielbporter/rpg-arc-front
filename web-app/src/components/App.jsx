@@ -2,6 +2,7 @@ import React from 'react';
 
 import Navbar from './Navbar';
 import Dashboard from './Dashboard';
+// import Widget from './Widget';
 
 class App extends React.Component {
   render() {
@@ -11,7 +12,9 @@ class App extends React.Component {
           <Navbar />
         </div>
         <div className="mainPanel">
-          <Dashboard />
+          <Dashboard>
+            <img src="http://placehold.it/350x300" alt="placeholder"/>
+          </Dashboard>
         </div>
       </div>
     );

@@ -46,21 +46,29 @@ function collect(connect, monitor) {
 // or WidgetChild...?
 
 class Dashboard extends Component {
-  renderWidget(widgetInfo) {
-    console.log(widgetInfo.toString());
-    console.log(widgetInfo.content.toString());
+  // renderWidget(widgetInfo) {
+  //   console.log(widgetInfo.toString());
+  //   console.log(widgetInfo.content.toString());
+  //   return (
+  //     <Widget x={widgetInfo.x} y={widgetInfo.y}>
+  //       {widgetInfo.content}
+  //     </Widget>
+  //   );
+  // }
+
+  renderWidgets() {
     return (
-      <Widget x={widgetInfo.x} y={widgetInfo.y}>
-        {widgetInfo.content}
+      <Widget x={50} y={70} >
+        {this.props.children}
       </Widget>
     );
   }
 
   render() {
-    const { connectDropTarget, dashboard } = this.props;
+    const { connectDropTarget, dashboard, children } = this.props;
     return connectDropTarget(
       <div className="dashboard">
-        {dashboard.valueSeq().map(this.renderWidget)}
+        {this.renderWidgets()}
       </div>
     );
   }

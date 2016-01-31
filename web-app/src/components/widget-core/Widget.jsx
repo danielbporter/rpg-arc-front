@@ -30,9 +30,9 @@ class Widget extends Component {
   }
 
   render() {
-    const { children, x, y, connectDragPreview, connectDragSource } = this.props;
+    const { key, children, x, y, connectDragPreview, connectDragSource } = this.props;
     return connectDragPreview(
-      <div className="widget mdl-shadow--2dp" style={{ left: x, top: y }}>
+      <div key={key} className="widget mdl-shadow--2dp" style={{ left: x, top: y }}>
         {connectDragSource(this.renderTitleBar())}
         {children}
       </div>
@@ -45,6 +45,7 @@ Widget.propTypes = {
   connectDragPreview: PropTypes.func.isRequired,
   x: PropTypes.number.isRequired,
   y: PropTypes.number.isRequired,
+  key: PropTypes.number.isRequired,
 };
 
 // Widget.propTypes = {

@@ -9,6 +9,18 @@ const initialState = Map({ 1:
   }),
 });
 
+
+// notes for example state tree
+// dashboard.widgets = [{
+//     widgetId: 1,
+//     x: 50,
+//     y: 180,
+// },]
+//
+// 
+//
+// 
+
 // { newWidget, removeWidget, moveWidget }
 
 function newWidget(state, action) {
@@ -34,7 +46,7 @@ export default function dashboard(state = initialState, action) {
     return state;
   }
 
-  console.log(state.toString());
+  // console.log(state.toString());
 
   switch (action.type) {
     case NEW_WIDGET:

@@ -7,7 +7,7 @@
     "lint": "eslint src",
     "build": "webpack",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --inline --content-base build/"
+    "start": "webpack-dev-server --inline --content-base ../static/build/"
   },
   "author": "Daniel Porter, Jensen Dempsey, Peter Herlin",
   "license": "UNLICENSED",
