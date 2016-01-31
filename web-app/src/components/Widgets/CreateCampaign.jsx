@@ -1,5 +1,6 @@
 import React from 'react';
 import Widget from './Widget';
+import api from './../../api';
 
 class CreateCampaign extends React.Component {
     constructor(props) {
@@ -19,6 +20,9 @@ class CreateCampaign extends React.Component {
             campaignName: this.state.campaignName.trim(),
             system: this.state.system.trim()
         };
+
+        api.post('campaign',data);
+        /*
         $.ajax({
             type: 'POST',
             beforeSend: function (request){
@@ -34,7 +38,7 @@ class CreateCampaign extends React.Component {
                 console.log("Failed to create campaign")
             }
 
-        });
+        });*/
 
     }
 
