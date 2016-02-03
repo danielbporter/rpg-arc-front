@@ -6,6 +6,7 @@ from flask import Flask, request, abort, redirect, make_response, jsonify, rende
 import boto3
 import decimal
 from werkzeug.local import LocalProxy
+import uuid
 
 app = Flask(__name__)
 current_user = LocalProxy(lambda: _request_ctx_stack.top.current_user)
@@ -65,6 +66,11 @@ def requires_auth(f):
     return decorated
 
 
+def get_uuid():
+    x = uuid.uuid4()
+    return str(x)
+
+
 def get_userid(token):
     return jwt.decode(
             token,
@@ -101,7 +107,8 @@ def campaign():
     userid = decoded['sub']
     table = db.Table('Campaign')
     json_data = request.get_json()
-    json_data['userid'] = userid
+    json_data['dm_userID'] = userid
+    json_data['campaignID'] = get_uuid()
     print(json_data)
     table.put_item(
         Item=json_data
@@ -109,14 +116,13 @@ def campaign():
     return jsonify({'status': 'success'})
 
 
-@app.route('/api/campaign/<int:campaign_id>', methods=['GET', 'POST', 'PUT'])
+@app.route('/api/campaign/<string:campaign_id>', methods=['GET', 'POST', 'PUT'])
 def campaign_detail(campaign_id):
     table=db.Table('Campaign')
     if request.method == 'GET':
         data = table.get_item(
                 Key={
-                    'CampaignID': campaign_id,
-                    'UserID': 'jdemp@cyve',
+                    'campaignID': campaign_id
                 }
         )
     try:
@@ -148,14 +154,15 @@ def user_detail(user_id):
     except KeyError:
         return "User not found"
 
+
 @app.route("/ping")
-#@cross_origin(headers=['Content-Type', 'Authorization'])
+# @cross_origin(headers=['Content-Type', 'Authorization'])
 def ping():
     return "All good. You don't need to be authenticated to call this"
 
 # This does need authentication
 @app.route("/api/ping", methods=['GET'])
-#@cross_origin(headers=['Content-Type', 'Authorization'])
+# @cross_origin(headers=['Content-Type', 'Authorization'])
 @requires_auth
 def secured_ping():
     return jsonify({'result': "All good. You only get this message if you're authenticated"})

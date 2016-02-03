@@ -20,9 +20,9 @@ class Widget extends React.Component {
 
   render(){
     return (
-      <Paper style={this.getStyle()}>
-          {this.props.children}
-      </Paper>
+            <Paper style={this.getStyle()}>
+                {this.props.children}
+            </Paper>
     );
   }
 }

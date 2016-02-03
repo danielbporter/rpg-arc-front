@@ -6,7 +6,7 @@ class Footer extends React.Component {
     getStyle() {
     return {
       bottom: 0,
-        position:'relative'
+        position:'absolute'
     };
   }
 

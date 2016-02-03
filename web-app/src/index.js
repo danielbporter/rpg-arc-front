@@ -14,7 +14,10 @@ import Home from './components/Home'
 import About from './components/About'
 import Login from './components/Login'
 import Logout from './components/Logout'
-import Dashboard from './components/Dashboard'
+import IndexDashboard from './components/Dashboards/IndexDashboard'
+import CampaignDashboard from './components/Dashboards/CampaignDashboard'
+import CharacterDashboard from './components/Dashboards/CharacterDashboard'
+import SessionDashboard from './components/Dashboards/SessionDashboard'
 
 const store = createStore();
 
@@ -31,7 +34,12 @@ ReactDOM.render(
             <IndexRoute component={Home}/>
             <Route path="login" component={Login}/>
             <Route path="logout" component={Logout}/>
-            <Route path="dashboard" component={Dashboard} onEnter={requireAuth}/>
+            <Route path="dashboard" onEnter={requireAuth}>
+                <IndexRoute component={IndexDashboard}/>
+                <Route path="campaign/:campaignName" component={CampaignDashboard}/>
+                <Route path="character/:campaignName(/:characterName)" component={CharacterDashboard}/>
+                <Route path="session/:campaignName(/:sessionName)" component={SessionDashboard}/>
+            </Route>
             <Route path="about" component={About}/>
         </Route>
   </Router>
