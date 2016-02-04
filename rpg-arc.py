@@ -72,11 +72,12 @@ def get_uuid():
 
 
 def get_userid(token):
-    return jwt.decode(
+    decoded = jwt.decode(
             token,
             base64.b64decode('9_X_rJMcCBBgI8AcR-ouUvxlXLlbFqAJiDQtjycQhV6sO95sSNHPadw0Q7MTP_dg'.replace("_","/").replace("-","+")),
             audience='ICf6JzrB6yHqkaSWFzJN1sAWwUINpbvJ'
             )
+    return decoded['sub']
 
 
 @app.route("/")
@@ -102,9 +103,7 @@ def register():
 @app.route('/api/campaign', methods=['POST'])
 @requires_auth
 def campaign():
-    token = request.headers.get('Authorization', None).split()[1]
-    decoded = get_userid(token)
-    userid = decoded['sub']
+    userid = get_userid(request.headers.get('Authorization', None).split()[1])
     table = db.Table('Campaign')
     json_data = request.get_json()
     json_data['dm_userID'] = userid
@@ -131,13 +130,28 @@ def campaign_detail(campaign_id):
         return "Campaign not found"
 
 
-@app.route('/api/user', methods=['POST'])
+@app.route('/api/user', methods=['GET','POST'])
 def user():
     table = db.Table('User')
-    if request.method == 'POST':
-        pass
-    else:
-        pass
+    if request.method == 'GET':
+        userid = get_userid(request.headers.get('Authorization', None).split()[1])
+        print(userid)
+        data = table.get_item(
+                Key={
+                    'userID': userid
+                }
+        )
+        try:
+            return json.dumps(data['Item'], cls=DecimalEncoder)
+        except KeyError:
+            data = {
+                'userID': userid,
+                'gm_campaigns':[],
+                'player_campaigns':[]
+            }
+            table.put_item(Item=data)
+            return jsonify(data)
+
 
 
 @app.route('/api/user/<string:user_id>', methods=['GET', 'POST', 'PUT'])
@@ -153,7 +167,6 @@ def user_detail(user_id):
         return json.dumps(data['Item'], cls=DecimalEncoder)
     except KeyError:
         return "User not found"
-
 
 @app.route("/ping")
 # @cross_origin(headers=['Content-Type', 'Authorization'])

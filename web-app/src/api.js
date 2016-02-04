@@ -10,14 +10,13 @@ module.exports= {
             },
             url: BASE_URL + resource,
             contentType: 'application/json; charset=utf-8',
-            data: JSON.stringify(data),
+            dataType:'json',
             success: function (data) {
                 console.log(JSON.stringify(data));
-                console.log("success");
-                return data;
+                localStorage.setItem('userData', data)
             },
             error: function () {
-                console.log("Failed to create campaign")
+                console.log("Failed to get data");
             }
         })
     },
@@ -35,7 +34,7 @@ module.exports= {
                 console.log("success");
             },
             error: function () {
-                console.log("Failed to create campaign")
+                console.log("Failed to post data")
             }
         })
     }

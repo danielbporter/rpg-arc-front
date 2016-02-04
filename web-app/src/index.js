@@ -5,6 +5,7 @@ import createStore from './store';
 import {Router, Route, Link, browserHistory, IndexRoute} from 'react-router';
 
 import auth from './auth';
+import api from './api'
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -27,15 +28,19 @@ function requireAuth() {
   }
 }
 
+function loadUserData(){
+    api.get('user');
+}
+
 ReactDOM.render(
   <Provider store={store}>
       <Router history={browserHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={Home}/>
             <Route path="login" component={Login}/>
-            <Route path="logout" component={Logout}/>
+            <Route path="logout" component={Logout} onEnter={auth.logout}/>
             <Route path="dashboard" onEnter={requireAuth}>
-                <IndexRoute component={IndexDashboard}/>
+                <IndexRoute component={IndexDashboard} onEnter={loadUserData}/>
                 <Route path="campaign/:campaignName" component={CampaignDashboard}/>
                 <Route path="character/:campaignName(/:characterName)" component={CharacterDashboard}/>
                 <Route path="session/:campaignName(/:sessionName)" component={SessionDashboard}/>
