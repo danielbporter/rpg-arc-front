@@ -1,28 +1,27 @@
 {
+  "campaignID" :"uuid stored as string",
   "name": "My Campaign",
   "gm": "Jensen reference",
   "players":[
     "Peter","Daniel"
   ],
-  "characters":[],
+  "alive-characters":[],
+  "dead-characters":[],
   "party":"Link to party object",
   "tagline": "A short description",
   "system": "System Reference",
-  "maps": true,
-  "campaign-calendar":true,
-  "setting":true,
-  "details":{
-    "map-sets":[1],
-    "campaign-calendar":1,
-    "setting":1
+  "setting":{
+    "map":[],
+    "calendar":{"calendar rules"},
+    "history":"history reference"
   },
   "current-session": "reference to current session",
-  "campaign-table-of-contents":{
-    "notes":[],
-    "sessions":[],
-    "places": [],
-  },
-  "super-widgets":["list of super widgets"]
+  "sessions":["reference to all campaign sessions"],
+  "content":[
+    {"refecen":"refecen to codex", "load on start": true, "campaign":true},
+    {"refecen":"refecen to codex", "load on start": true, "campaign":false},
+    {"refecen":"refecen to codex", "load on start": false, "campaign":false}
+  ]
 }
 
 this is data that everyone would have access to, a few permissions withstanding
