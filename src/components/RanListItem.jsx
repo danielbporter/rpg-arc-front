@@ -15,8 +15,8 @@ class RanListItem extends Component {
   render() {
     const style = this.getStyle();
 
-    const name = this.props.children.name;
-    const shortDescription = this.props.children['short-description'];
+    const name = this.props.name;
+    const shortDescription = this.props.description;
 
     return (
       <div style={ style }>
@@ -28,7 +28,8 @@ class RanListItem extends Component {
 }
 
 RanListItem.propTypes = {
-  children: PropTypes.object.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string,
 };
 
 export default RanListItem;
