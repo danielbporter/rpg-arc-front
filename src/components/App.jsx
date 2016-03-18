@@ -1,61 +1,17 @@
-import React, {PropTypes} from 'react';
-//import { connect } from 'react-redux'
-import Navbar from './Navbar';
-import Footer from './Footer'
-import Dashboard from './Dashboards/Dashboard';
-//import Login from './Login';
-import auth from './../auth'
+import React, { Component } from 'react';
+import Ranfiltrator from './Ranfiltrator';
+import encounters from '../../sample_encounters.json';
 
-class App extends React.Component {
-   constructor(props) {
-     super(props);
-   }
+let keyCount = 0;
+const encounterList = encounters.map(encounter =>
+  Object.assign({}, encounter, { key: keyCount++ }));
 
-    getStyles() {
-    return {
-      minHeight:'100%',
-    };
+class App extends Component {
+  render() {
+    return (
+      <Ranfiltrator contentList={encounterList} />
+    );
   }
-
-    getStyleBody(){
-        return {
-            padding:10
-        }
-    }
-    /*
-    showLock(){
-        this.state.lock.show()
-    }
-    getIdToken() {
-        var idToken = localStorage.getItem('userToken');
-        var authHash = this.props.lock.parseHash(window.location.hash);
-        if (!idToken && authHash)
-        {
-        if (authHash.id_token) {
-            idToken = authHash.id_token;
-            localStorage.setItem('userToken', authHash.id_token);
-            }
-        if (authHash.error) {
-            console.log("Error signing in", authHash);
-            return null;
-            }
-        }
-        window.location.href = '/#';
-        return idToken;
-    }*/
-
-    render() {
-      return (
-          <div style={this.getStyles()}>
-            <Navbar />
-              <div style={this.getStyleBody()}>
-                  {this.props.children}
-              </div>
-          </div>
-      );
-
-    }
-
 }
 
-export default App
+export default App;

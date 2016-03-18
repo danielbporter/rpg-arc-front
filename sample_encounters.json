@@ -1,0 +1,295 @@
+[
+  {
+    "subtype": "Negotiate",
+    "full-description": "@#$%@#%",
+    "name": "Ransom",
+    "tags": [
+      "hostage",
+      "princess",
+      "randsom",
+      "money",
+      "no-blood"
+    ],
+    "short-description": "Captured princess, randsom release with $$ - no bloodshed",
+    "genre": "Fantasy",
+    "location": "city",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Engage/Dis",
+    "full-description": "@#$%@#%",
+    "name": "Fight red dragon",
+    "tags": [
+      "red-dragon",
+      "death"
+    ],
+    "short-description": "Red dragon attacks!",
+    "genre": "Fantasy",
+    "location": "any",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Explore",
+    "full-description": "@#$%@#%",
+    "name": "Explore the abandoned lighthouse",
+    "tags": [
+      "lighthouse",
+      "treasure",
+      "spooky"
+    ],
+    "short-description": "Abandoned light house might have treasure....",
+    "genre": "Fantasy",
+    "location": "lighthouse",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Ongoing",
+    "full-description": "@#$%@#%",
+    "name": "Collect the chickens",
+    "tags": [
+      "chickens",
+      "collect",
+      "towns"
+    ],
+    "short-description": "Collect 10 chickens from grimstown",
+    "genre": "Fantasy",
+    "location": "multiple",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Solve",
+    "full-description": "@#$%@#%",
+    "name": "White Murder",
+    "tags": [
+      "murder",
+      "blood",
+      "mystery",
+      "spooky"
+    ],
+    "short-description": "Solve who killed the priest of Havenloft",
+    "genre": "Fantasy",
+    "location": "town",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Negotiate",
+    "full-description": "@#$%@#%",
+    "name": "Barter for a pawned item",
+    "tags": [
+      "money",
+      "barter",
+      "talk",
+      "facetime"
+    ],
+    "short-description": "Susie pawned her father's sword, now she needs it back! ",
+    "genre": "Fantasy",
+    "location": "town",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Engage/Dis",
+    "full-description": "@#$%@#%",
+    "name": "Kobolds attack",
+    "tags": [
+      "kobolds",
+      "attacks",
+      "advantage",
+      "moves"
+    ],
+    "short-description": "SEveral kobolds have become unrully and have waged a war against the town! ",
+    "genre": "Fantasy",
+    "location": "town",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Explore",
+    "full-description": "@#$%@#%",
+    "name": "Mystery of Oldmans Keep",
+    "tags": [
+      "mystery",
+      "keep",
+      "dungeon"
+    ],
+    "short-description": "Rumors of treasure spread about what lies in the old mans keep",
+    "genre": "Fantasy",
+    "location": "keep",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Ongoing",
+    "full-description": "@#$%@#%",
+    "name": "Smash 10 ceramic pots",
+    "tags": [
+      "pots",
+      "smashing",
+      "souls",
+      "curses"
+    ],
+    "short-description": "Ten pots have to be smashed to release gregs soul",
+    "genre": "Fantasy",
+    "location": "multiple",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Solve",
+    "full-description": "@#$%@#%",
+    "name": "Cross the Lava River",
+    "tags": [
+      "cross",
+      "lava",
+      "puzzle",
+      "allive"
+    ],
+    "short-description": "Need a way across the molten hot rock",
+    "genre": "Fantasy",
+    "location": "volcanic",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Negotiate",
+    "full-description": "@#$%@#%",
+    "name": "A street quarel between lovers has become unruly",
+    "tags": [
+      "lovers",
+      "quarel",
+      "stop",
+      "public"
+    ],
+    "short-description": "two lovers have started fighting. ",
+    "genre": "Fantasy",
+    "location": "city",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Engage/Dis",
+    "full-description": "@#$%@#%",
+    "name": "A tornado apporaches",
+    "tags": [
+      "tornado",
+      "weather",
+      "nature"
+    ],
+    "short-description": "The sky becomes dark and windy",
+    "genre": "Fantasy",
+    "location": "any",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Explore",
+    "full-description": "@#$%@#%",
+    "name": "What lies under the oak bridge?",
+    "tags": [
+      "bridge",
+      "loot",
+      "treasure-hunter"
+    ],
+    "short-description": "treasure hunters have heard part one of a map exists there",
+    "genre": "Fantasy",
+    "location": "bridge",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Ongoing",
+    "full-description": "@#$%@#%",
+    "name": "Kill seven bears before next month",
+    "tags": [
+      "bears",
+      "pelts",
+      "guild",
+      "hunter"
+    ],
+    "short-description": "Hunters guild requires blood",
+    "genre": "Fantasy",
+    "location": "multiple",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Solve",
+    "full-description": "@#$%@#%",
+    "name": "Who stole the Kings crown from under his nose?",
+    "tags": [
+      "crowne",
+      "stole",
+      "mystery",
+      "whodunnit"
+    ],
+    "short-description": "Someone stole the kings crowne and there are 5 suspects ",
+    "genre": "Fantasy",
+    "location": "city",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Negotiate",
+    "full-description": "@#$%@#%",
+    "name": "Guards attempt extorion for entry into the castle",
+    "tags": [
+      "guards",
+      "extortion",
+      "tax",
+      "angry",
+      "unfair"
+    ],
+    "short-description": "Guards unlawfuly attempt extortion",
+    "genre": "Fantasy",
+    "location": "city",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Engage/Dis",
+    "full-description": "@#$%@#%",
+    "name": "Chase scene ",
+    "tags": [
+      "chase",
+      "rooftops",
+      "adventure"
+    ],
+    "short-description": "Someone stole a purse and they are running through the streets ",
+    "genre": "Fantasy",
+    "location": "city",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Explore",
+    "full-description": "@#$%@#%",
+    "name": "What can be found under the ruins of Veltgars home?",
+    "tags": [
+      "cryptkeeploot",
+      "traps",
+      "dungeon"
+    ],
+    "short-description": "Rumors of treasure at Veltgars home",
+    "genre": "Fantasy",
+    "location": "dungeon",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Ongoing",
+    "full-description": "@#$%@#%",
+    "name": "find 4 dust spars",
+    "tags": [
+      "dustspar",
+      "ongoing",
+      "potion",
+      "recepe"
+    ],
+    "short-description": "look for 4 dust spars in the adventures for rosas potion",
+    "genre": "Fantasy",
+    "location": "multiple",
+    "type": "Encounters"
+  },
+  {
+    "subtype": "Solve",
+    "full-description": "@#$%@#%",
+    "name": "who is the real conspirator in the kingdom?",
+    "tags": [
+      "mystery",
+      "intregue",
+      "poltical",
+      "rivalry"
+    ],
+    "short-description": "look for the conspirator ",
+    "genre": "Fantasy",
+    "location": "city",
+    "type": "Encounters"
+  }
+]

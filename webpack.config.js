@@ -2,7 +2,7 @@ module.exports = {
   entry: './src/index.js',
 
   output: {
-    path: '../static/build',
+    path: 'build/',
     filename: 'bundle.js'
   },
 
@@ -18,6 +18,6 @@ module.exports = {
   devtool: '#inline-source-map',
 
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css']
+    extensions: ['', '.js', '.jsx', '.css', '.sass']
   }
 };
