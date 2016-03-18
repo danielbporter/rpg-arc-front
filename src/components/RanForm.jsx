@@ -1,55 +1,46 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { reduxForm } from 'redux-form';
+// import { reduxForm } from 'redux-form';
 import Select from 'react-select';
 import { changeRanfiltratorFilters } from '../actions/ActionCreators';
+import { List } from 'immutable';
 
 function mapStateToProps(state) {
   return {
     genre: state.get('genre'),
+    genres: state.get('genres'),
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     formChange: (field, newValue) => dispatch(changeRanfiltratorFilters(field, newValue)),
+    // formChange: (newGenre) => {
+    //   console.log('field');
+    //   console.log(field);
+    //   console.log('newValue');
+    //   console.log(newValue);
+    //   dispatch(changeRanfiltratorFilters('genre', newValue));
+    // },
   };
 }
 
-const genres = [
-  {
-    value: 'any',
-    label: 'Any',
-  },
-  {
-    value: 'fantasy',
-    label: 'Fantasy',
-  },
-  {
-    value: 'scifi',
-    label: 'Science Fiction',
-  },
-];
-
 class RanForm extends Component {
 
-  onGenreChange(newGenre) {
-    // console.log('changeGenre');
-    // console.log(newGenre);
-    // console.log(this.props);
-    this.props.formChange('genre', newGenre);
-  }
+  // changeGenre(formChange, newGenre) {
+  //   formChange('genre', newGenre.value);
+  // }
 
   render() {
-    const genre = this.props;
-    const onGenreChange = this.onGenreChange;
+    const { genre, genres, formChange } = this.props;
+    // const changeGenre = this.changeGenre;
 
     return (
       <Select
         name="genre-select"
         value={genre}
         options={genres}
-        onChange={onGenreChange}
+        onChange={(newGenre) => formChange('genre', newGenre.value)}
       />
     );
   }
@@ -58,6 +49,7 @@ class RanForm extends Component {
 RanForm.propTypes = {
   formChange: PropTypes.func,
   genre: PropTypes.string,
+  genres: PropTypes.instanceOf(List),
 };
 
 // RanForm.defaultProps = {

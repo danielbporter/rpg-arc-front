@@ -17,11 +17,13 @@ class RanListItem extends Component {
 
     const name = this.props.name;
     const shortDescription = this.props.description;
+    const genre = this.props.genre;
 
     return (
       <div style={ style }>
         <p>{name}</p>
         <p>{shortDescription}</p>
+        <p>{genre}</p>
       </div>
     );
   }
@@ -30,6 +32,7 @@ class RanListItem extends Component {
 RanListItem.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string,
+  genre: PropTypes.string,
 };
 
 export default RanListItem;

@@ -24,7 +24,7 @@
       "death"
     ],
     "short-description": "Red dragon attacks!",
-    "genre": "fantasy",
+    "genre": "sci-fi",
     "location": "any",
     "type": "Encounters"
   },
@@ -38,7 +38,7 @@
       "spooky"
     ],
     "short-description": "Abandoned light house might have treasure....",
-    "genre": "fantasy",
+    "genre": "sci-fi",
     "location": "lighthouse",
     "type": "Encounters"
   },
@@ -52,7 +52,7 @@
       "towns"
     ],
     "short-description": "Collect 10 chickens from grimstown",
-    "genre": "fantasy",
+    "genre": "sci-fi",
     "location": "multiple",
     "type": "Encounters"
   },
@@ -67,7 +67,7 @@
       "spooky"
     ],
     "short-description": "Solve who killed the priest of Havenloft",
-    "genre": "fantasy",
+    "genre": "sci-fi",
     "location": "town",
     "type": "Encounters"
   },
@@ -82,7 +82,7 @@
       "facetime"
     ],
     "short-description": "Susie pawned her father's sword, now she needs it back! ",
-    "genre": "fantasy",
+    "genre": "sci-fi",
     "location": "town",
     "type": "Encounters"
   },
@@ -97,7 +97,7 @@
       "moves"
     ],
     "short-description": "SEveral kobolds have become unrully and have waged a war against the town! ",
-    "genre": "fantasy",
+    "genre": "sci-fi",
     "location": "town",
     "type": "Encounters"
   },
@@ -111,7 +111,7 @@
       "dungeon"
     ],
     "short-description": "Rumors of treasure spread about what lies in the old mans keep",
-    "genre": "fantasy",
+    "genre": "sci-fi",
     "location": "keep",
     "type": "Encounters"
   },
@@ -126,7 +126,7 @@
       "curses"
     ],
     "short-description": "Ten pots have to be smashed to release gregs soul",
-    "genre": "fantasy",
+    "genre": "sci-fi",
     "location": "multiple",
     "type": "Encounters"
   },
@@ -141,7 +141,7 @@
       "allive"
     ],
     "short-description": "Need a way across the molten hot rock",
-    "genre": "fantasy",
+    "genre": "sci-fi",
     "location": "volcanic",
     "type": "Encounters"
   },

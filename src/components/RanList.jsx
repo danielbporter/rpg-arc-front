@@ -8,7 +8,7 @@ class RanList extends Component {
     };
 
     const items = this.props.children.map((item) =>
-      <RanListItem name={item.name} description={item.description} />);
+      <RanListItem name={item.name} description={item.description} genre={item.genre} />);
 
     return (
       <div style={style}>

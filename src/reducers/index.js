@@ -24,13 +24,16 @@ export default function reducer(state = initialState, action) {
     return state;
   }
 
-  console.log('in reducer.');
+  console.log('Action received by reducer:');
   console.log(action);
-  console.log(state);
+  // console.log(state);
 
-  if (action === CHANGE_RANFILTRATOR_FILTER) {
-    state.set(action.field, action.value);
-    return state;
+  if (action.type === CHANGE_RANFILTRATOR_FILTER) {
+    console.log('Change ran. state.');
+    return state.set(action.field, action.value);
+    // console.log('after update.');
+    // console.log(state.toString());
+    // return state;
   }
 
   return state;
