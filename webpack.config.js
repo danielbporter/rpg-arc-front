@@ -18,6 +18,6 @@ module.exports = {
   devtool: '#inline-source-map',
 
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css'],
-  },
+    extensions: ['', '.js', '.jsx', '.css', '.sass']
+  }
 };
