@@ -7,7 +7,8 @@ class RanList extends Component {
       //backgroundColor: '#333300',
     };
 
-    const items = this.props.children.map((item) => <RanListItem children={item} />);
+    const items = this.props.children.map((item) =>
+      <RanListItem name={item.name} description={item.description} genre={item.genre} />);
 
     return (
       <div style={style}>

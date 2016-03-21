@@ -15,20 +15,24 @@ class RanListItem extends Component {
   render() {
     const style = this.getStyle();
 
-    const name = this.props.children.name;
-    const shortDescription = this.props.children['short-description'];
+    const name = this.props.name;
+    const shortDescription = this.props.description;
+    const genre = this.props.genre;
 
     return (
       <div style={ style }>
         <p>{name}</p>
         <p>{shortDescription}</p>
+        <p>{genre}</p>
       </div>
     );
   }
 }
 
 RanListItem.propTypes = {
-  children: PropTypes.object.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  genre: PropTypes.string,
 };
 
 export default RanListItem;

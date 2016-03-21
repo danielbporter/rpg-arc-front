@@ -1,43 +1,59 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+// import { reduxForm } from 'redux-form';
+import Select from 'react-select';
+import { changeRanfiltratorFilters } from '../actions/ActionCreators';
+import { List } from 'immutable';
 
-const genres = {
-  any: {
-    
-  }
+function mapStateToProps(state) {
+  return {
+    genre: state.get('genre'),
+    genres: state.get('genres'),
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    formChange: (field, newValue) => dispatch(changeRanfiltratorFilters(field, newValue)),
+    // formChange: (newGenre) => {
+    //   console.log('field');
+    //   console.log(field);
+    //   console.log('newValue');
+    //   console.log(newValue);
+    //   dispatch(changeRanfiltratorFilters('genre', newValue));
+    // },
+  };
 }
 
 class RanForm extends Component {
-  constructor() {
-    super();
-    this.genre = 'any';
-  }
 
-  getStyle() {
-    return {
-      border: 'solid black 1px',
-    };
-  }
-
-  handleSelect() {
-    console.log('Selection!');
-  }
+  // changeGenre(formChange, newGenre) {
+  //   formChange('genre', newGenre.value);
+  // }
 
   render() {
-    const style = this.getStyle();
+    const { genre, genres, formChange } = this.props;
+    // const changeGenre = this.changeGenre;
 
     return (
-      <div style={style}>
-        <form onChange={this.handleSelect}>
-          <label>Genre</label>
-          <select>
-            <option value="any">Any</option>
-            <option value="fantasy">Fantasy</option>
-            <option value="science-fiction">Science Fiction</option>
-          </select>
-        </form>
-      </div>
+      <Select
+        name="genre-select"
+        value={genre}
+        options={genres}
+        onChange={(newGenre) => formChange('genre', newGenre.value)}
+      />
     );
   }
 }
 
-export default RanForm;
+RanForm.propTypes = {
+  formChange: PropTypes.func,
+  genre: PropTypes.string,
+  genres: PropTypes.instanceOf(List),
+};
+
+// RanForm.defaultProps = {
+//   genre: 'any',
+// };
+
+export default connect(mapStateToProps, mapDispatchToProps)(RanForm);

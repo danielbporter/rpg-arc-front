@@ -11,7 +11,7 @@
       "no-blood"
     ],
     "short-description": "Captured princess, randsom release with $$ - no bloodshed",
-    "genre": "Fantasy",
+    "genre": "fantasy",
     "location": "city",
     "type": "Encounters"
   },
@@ -24,7 +24,7 @@
       "death"
     ],
     "short-description": "Red dragon attacks!",
-    "genre": "Fantasy",
+    "genre": "sci-fi",
     "location": "any",
     "type": "Encounters"
   },
@@ -38,7 +38,7 @@
       "spooky"
     ],
     "short-description": "Abandoned light house might have treasure....",
-    "genre": "Fantasy",
+    "genre": "sci-fi",
     "location": "lighthouse",
     "type": "Encounters"
   },
@@ -52,7 +52,7 @@
       "towns"
     ],
     "short-description": "Collect 10 chickens from grimstown",
-    "genre": "Fantasy",
+    "genre": "sci-fi",
     "location": "multiple",
     "type": "Encounters"
   },
@@ -67,7 +67,7 @@
       "spooky"
     ],
     "short-description": "Solve who killed the priest of Havenloft",
-    "genre": "Fantasy",
+    "genre": "sci-fi",
     "location": "town",
     "type": "Encounters"
   },
@@ -82,7 +82,7 @@
       "facetime"
     ],
     "short-description": "Susie pawned her father's sword, now she needs it back! ",
-    "genre": "Fantasy",
+    "genre": "sci-fi",
     "location": "town",
     "type": "Encounters"
   },
@@ -97,7 +97,7 @@
       "moves"
     ],
     "short-description": "SEveral kobolds have become unrully and have waged a war against the town! ",
-    "genre": "Fantasy",
+    "genre": "sci-fi",
     "location": "town",
     "type": "Encounters"
   },
@@ -111,7 +111,7 @@
       "dungeon"
     ],
     "short-description": "Rumors of treasure spread about what lies in the old mans keep",
-    "genre": "Fantasy",
+    "genre": "sci-fi",
     "location": "keep",
     "type": "Encounters"
   },
@@ -126,7 +126,7 @@
       "curses"
     ],
     "short-description": "Ten pots have to be smashed to release gregs soul",
-    "genre": "Fantasy",
+    "genre": "sci-fi",
     "location": "multiple",
     "type": "Encounters"
   },
@@ -141,7 +141,7 @@
       "allive"
     ],
     "short-description": "Need a way across the molten hot rock",
-    "genre": "Fantasy",
+    "genre": "sci-fi",
     "location": "volcanic",
     "type": "Encounters"
   },
@@ -156,7 +156,7 @@
       "public"
     ],
     "short-description": "two lovers have started fighting. ",
-    "genre": "Fantasy",
+    "genre": "fantasy",
     "location": "city",
     "type": "Encounters"
   },
@@ -170,7 +170,7 @@
       "nature"
     ],
     "short-description": "The sky becomes dark and windy",
-    "genre": "Fantasy",
+    "genre": "fantasy",
     "location": "any",
     "type": "Encounters"
   },
@@ -184,7 +184,7 @@
       "treasure-hunter"
     ],
     "short-description": "treasure hunters have heard part one of a map exists there",
-    "genre": "Fantasy",
+    "genre": "fantasy",
     "location": "bridge",
     "type": "Encounters"
   },
@@ -199,7 +199,7 @@
       "hunter"
     ],
     "short-description": "Hunters guild requires blood",
-    "genre": "Fantasy",
+    "genre": "fantasy",
     "location": "multiple",
     "type": "Encounters"
   },
@@ -214,7 +214,7 @@
       "whodunnit"
     ],
     "short-description": "Someone stole the kings crowne and there are 5 suspects ",
-    "genre": "Fantasy",
+    "genre": "fantasy",
     "location": "city",
     "type": "Encounters"
   },
@@ -230,7 +230,7 @@
       "unfair"
     ],
     "short-description": "Guards unlawfuly attempt extortion",
-    "genre": "Fantasy",
+    "genre": "fantasy",
     "location": "city",
     "type": "Encounters"
   },
@@ -244,7 +244,7 @@
       "adventure"
     ],
     "short-description": "Someone stole a purse and they are running through the streets ",
-    "genre": "Fantasy",
+    "genre": "fantasy",
     "location": "city",
     "type": "Encounters"
   },
@@ -258,7 +258,7 @@
       "dungeon"
     ],
     "short-description": "Rumors of treasure at Veltgars home",
-    "genre": "Fantasy",
+    "genre": "fantasy",
     "location": "dungeon",
     "type": "Encounters"
   },
@@ -273,7 +273,7 @@
       "recepe"
     ],
     "short-description": "look for 4 dust spars in the adventures for rosas potion",
-    "genre": "Fantasy",
+    "genre": "fantasy",
     "location": "multiple",
     "type": "Encounters"
   },
@@ -288,7 +288,7 @@
       "rivalry"
     ],
     "short-description": "look for the conspirator ",
-    "genre": "Fantasy",
+    "genre": "fantasy",
     "location": "city",
     "type": "Encounters"
   }

@@ -6,7 +6,7 @@ let keyCount = 0;
 const encounterList = encounters.map(encounter =>
   Object.assign({}, encounter, { key: keyCount++ }));
 
-class App extends Component {
+class RanApp extends Component {
   render() {
     return (
       <Ranfiltrator contentList={encounterList} />
@@ -14,4 +14,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default RanApp;
