@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 // import { reduxForm } from 'redux-form';
 import Select from 'react-select';
-import { changeRanfiltratorFilters } from '../actions/ActionCreators';
+import { changeRanfiltratorFilters } from '../../actions/ActionCreators';
 import { List } from 'immutable';
 
 function mapStateToProps(state) {

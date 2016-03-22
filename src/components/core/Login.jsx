@@ -1,5 +1,5 @@
 import React from 'react';
-import auth from './../../../rpg-arc-front/src/auth';
+import auth from '../../auth';
 import Navbar from './Navbar';
 
 class Login extends React.Component {

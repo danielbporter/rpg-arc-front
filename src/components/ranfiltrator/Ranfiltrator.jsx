@@ -5,7 +5,7 @@ import RanList from './RanList';
 
 function mapStateToProps(state) {
   return {
-    genre: state.get('genre'),
+    genre: state.Ranfiltrator.get('genre'),
   };
 }
 

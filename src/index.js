@@ -10,19 +10,22 @@ import api from './api'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-import App from './components-core/App';
-import Home from './components-core/Home'
-import About from './components-core/About'
-import Login from './components-core/Login'
-import Logout from './components-core/Logout'
-import IndexDashboard from './components-core/Dashboards/IndexDashboard'
-import CampaignDashboard from './components-core/Dashboards/CampaignDashboard'
-import CharacterDashboard from './components-core/Dashboards/CharacterDashboard'
-import SessionDashboard from './components-core/Dashboards/SessionDashboard'
+import App from './components/core/App';
+import Home from './components/core/Home';
+import About from './components/core/About';
+import Login from './components/core/Login';
+import Logout from './components/core/Logout';
+import IndexDashboard from './components/core/dashboards/IndexDashboard';
+import CampaignDashboard from './components/core/dashboards/CampaignDashboard';
+import CharacterDashboard from './components/core/dashboards/CharacterDashboard';
+import SessionDashboard from './components/core/dashboards/SessionDashboard';
+
+//Test pages
+import TestIndex from './components/core/TestIndex';
 
 
 // ranfiltrator
-import RanApp from './components/RanApp';
+import RanApp from './components/ranfiltrator/RanApp';
 
 const store = initializeStore();
 
@@ -49,7 +52,10 @@ ReactDOM.render(
                 <Route path="character/:campaignName(/:characterName)" component={CharacterDashboard}/>
                 <Route path="session/:campaignName(/:sessionName)" component={SessionDashboard}/>
             </Route>
-            <Route path="ranfiltrator" component={RanApp}/>
+            <Route path="test">
+                <IndexRoute component={TestIndex}/>
+                <Route path="ranfiltrator" component={RanApp}/>
+            </Route>
             <Route path="about" component={About}/>
         </Route>
         </Router>

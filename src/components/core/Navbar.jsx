@@ -9,7 +9,7 @@ import MenuItem from 'material-ui/lib/menus/menu-item';
 import LeftNav from 'material-ui/lib/left-nav';
 
 
-import auth from './../../../rpg-arc-front/src/auth'
+import auth from '../../auth'
 import {Link} from 'react-router'
 
 

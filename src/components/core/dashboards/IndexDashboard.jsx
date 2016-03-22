@@ -1,6 +1,6 @@
 import React from 'react';
 import Dashboard from './Dashboard'
-import CreateCampaign from '../Widgets/CreateCampaign'
+import CreateCampaign from '../../widgets/CreateCampaign'
 
 class IndexDashboard extends React.Component {
 
