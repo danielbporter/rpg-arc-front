@@ -7,8 +7,8 @@ import { List } from 'immutable';
 
 function mapStateToProps(state) {
   return {
-    genre: state.get('genre'),
-    genres: state.get('genres'),
+    genre: state.ranfiltrator.get('genre'),
+    genres: state.ranfiltrator.get('genres'),
   };
 }
 
@@ -35,14 +35,15 @@ class RanForm extends Component {
     const { genre, genres, formChange } = this.props;
     // const changeGenre = this.changeGenre;
 
-    return (
+    /* return (
       <Select
         name="genre-select"
         value={genre}
         options={genres}
         onChange={(newGenre) => formChange('genre', newGenre.value)}
       />
-    );
+    ); */
+    return (<h1>RanForm Goes Here.</h1>);
   }
 }
 

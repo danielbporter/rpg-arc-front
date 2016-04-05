@@ -1,7 +1,7 @@
-import { Map } from 'immutable';
+import { fromJS } from 'immutable';
 import { CHANGE_RANFILTRATOR_FILTER } from '../actions/ActionTypes';
 
-const initialState = Map({
+const initialState = fromJS({
   genre: 'any',
   genres: [
     {
@@ -24,12 +24,12 @@ export default function reducer(state = initialState, action) {
     return state;
   }
 
-  console.log('Action received by reducer:');
-  console.log(action);
+  // console.log('Action received by reducer:');
+  // console.log(action);
   // console.log(state);
 
   if (action.type === CHANGE_RANFILTRATOR_FILTER) {
-    console.log('Change ran. state.');
+    // console.log('Change ran. state.');
     return state.set(action.field, action.value);
     // console.log('after update.');
     // console.log(state.toString());

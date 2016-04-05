@@ -4,8 +4,9 @@ import RanForm from './RanForm';
 import RanList from './RanList';
 
 function mapStateToProps(state) {
+  // console.log(state.ranfiltrator);
   return {
-    genre: state.Ranfiltrator.get('genre'),
+    genre: state.ranfiltrator.get('genre'),
   };
 }
 
