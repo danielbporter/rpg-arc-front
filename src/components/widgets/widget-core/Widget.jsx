@@ -20,12 +20,12 @@ class Widget extends React.Component {
 
   render(){
     return (
-            <Paper style={this.getStyle()}>
+        // switch to css mdl
+            <div className="mdl-card mdl-shadow--2dp">
                 {this.props.children}
-            </Paper>
+            </div>
     );
   }
 }
-Widget.propTypes= {children: React.PropTypes.element.isRequired};
 
 export default Widget;

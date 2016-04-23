@@ -1,5 +1,5 @@
 import React from 'react';
-import Widget from './Widget';
+import Widget from './widget-core/Widget';
 
 class CampaignView extends React.Component {
 
