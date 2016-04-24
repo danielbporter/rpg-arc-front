@@ -28,6 +28,9 @@ import SessionDashboard from './components/core/dashboards/SessionDashboard';
 // Test pages
 import TestIndex from './components/core/TestIndex';
 
+// TestDashboard
+import TestDashboard from './components/core/dashboards/TestDashboard';
+
 // ranfiltrator
 import RanApp from './components/ranfiltrator/RanApp';
 
@@ -65,6 +68,7 @@ ReactDOM.render(
       <Route path="test">
         <IndexRoute component={TestIndex} />
         <Route path="ranfiltrator" component={RanApp} />
+        <Route path="dashboard" component={TestDashboard} />
       </Route>
         <Route path="about" component={About} />
       </Route>
