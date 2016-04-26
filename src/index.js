@@ -31,6 +31,8 @@ import TestIndex from './components/core/TestIndex';
 // TestDashboard
 import TestDashboard from './components/core/dashboards/TestDashboard';
 
+import DazzleDashboard from './components/core/dashboards/DazzleDashboard';
+
 // ranfiltrator
 import RanApp from './components/ranfiltrator/RanApp';
 
@@ -69,6 +71,7 @@ ReactDOM.render(
         <IndexRoute component={TestIndex} />
         <Route path="ranfiltrator" component={RanApp} />
         <Route path="dashboard" component={TestDashboard} />
+        <Route path="dazzle" components={DazzleDashboard} />
       </Route>
         <Route path="about" component={About} />
       </Route>
