@@ -21,32 +21,11 @@ class App extends React.Component {
     };
   }
 
-    /*
-    showLock(){
-        this.state.lock.show()
-    }
-    getIdToken() {
-        var idToken = localStorage.getItem('userToken');
-        var authHash = this.props.lock.parseHash(window.location.hash);
-        if (!idToken && authHash)
-        {
-        if (authHash.id_token) {
-            idToken = authHash.id_token;
-            localStorage.setItem('userToken', authHash.id_token);
-            }
-        if (authHash.error) {
-            console.log("Error signing in", authHash);
-            return null;
-            }
-        }
-        window.location.href = '/#';
-        return idToken;
-    }*/
 
     render() {
       return (
         <div style={this.getStyles()}>
-          <Navbar />
+          <Navbar/>
           <div style={this.getStyleBody()}>
             {this.props.children}
           </div>

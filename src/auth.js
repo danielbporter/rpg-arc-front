@@ -1,5 +1,4 @@
 var lock = new Auth0Lock('ICf6JzrB6yHqkaSWFzJN1sAWwUINpbvJ', 'cyve.auth0.com');
-import api from './api'
 
 module.exports =
 {
@@ -9,6 +8,7 @@ module.exports =
             localStorage.setItem('userToken', token);
             localStorage.setItem('userProfile', profile);
             console.log(profile);
+            // add user to our user_table
             window.location.href = '/#/dashboard'
         });
   },
@@ -27,6 +27,7 @@ module.exports =
 
   logout(cb) {
       localStorage.clear();
+      window.location.href = '/#/logout'
   },
 
   loggedIn() {

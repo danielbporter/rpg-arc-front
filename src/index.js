@@ -30,6 +30,7 @@ import TestIndex from './components/core/TestIndex';
 
 // TestDashboard
 import TestDashboard from './components/core/dashboards/TestDashboard';
+//import Blueprint from './components/core/dashboards/Blueprint'
 
 // ranfiltrator
 import RanApp from './components/ranfiltrator/RanApp';
@@ -42,25 +43,15 @@ function requireAuth() {
   }
 }
 
-function loadUserData() {
-  api.get('user');
-}
-
-// ReactDOM.render(
-//   <Provider store={store}>
-//     <RanApp />
-//   </Provider>,
-//   document.getElementById('root'));
-
 ReactDOM.render(
   <Provider store={store}>
     <Router history={hashHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Home} />
         <Route path="login" component={Login} />
-        <Route path="logout" component={Logout} onEnter={auth.logout} />
+        <Route path="logout" component={Logout}/>
         <Route path="dashboard" onEnter={requireAuth}>
-          <IndexRoute component={IndexDashboard} onEnter={loadUserData} />
+          <IndexRoute component={IndexDashboard} />
           <Route path="campaign/:campaignName" component={CampaignDashboard} />
           <Route path="character/:campaignName(/:characterName)" component={CharacterDashboard} />
           <Route path="session/:campaignName(/:sessionName)" component={SessionDashboard} />

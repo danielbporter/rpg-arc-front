@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactGridLayout from 'react-grid-layout';
+import Note from '../../widgets/Note'
 
 class TestDashboard extends Component {
   getDivStyle() {
@@ -23,7 +24,7 @@ class TestDashboard extends Component {
 
   render() {
     const layout = [
-      { i: 'a', x: 0, y: 0, w: 1, h: 1 },
+      { i: 'a', x: 0, y: 0, w: 4, h: 4, isResizable:true},
       { i: 'b', x: 1, y: 0, w: 1, h: 1 },
       { i: 'c', x: 3, y: 1, w: 1, h: 1 },
     ];
@@ -33,7 +34,7 @@ class TestDashboard extends Component {
 
     return (
       <ReactGridLayout layout={layout} {...rglSettings}>
-        <div key={'a'} style={divStyle}>A</div>
+        <div key={'a'} style={divStyle}><Note/></div>
         <div key={'b'} style={divStyle}>B</div>
         <div key={'c'} style={divStyle}>C</div>
       </ReactGridLayout>
